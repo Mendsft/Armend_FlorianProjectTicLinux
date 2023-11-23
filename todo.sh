@@ -27,13 +27,18 @@ if [[ "$choix " =~ [1] ]]; then #Si le choix de l'utilisateur est "1" alors on e
 elif [[ "$choix " =~ [2] ]]
 then
     echo "Test =b"
-elif [[ "$choix " =~ [3] ]]
+elif [[ "$choix " =~ [3] ]] #afficher le contenu de la liste 
 then
-    echo "Test =C"
-fi
-
+    echo "Voici ce que contient votre To-do-list"
+    cat task
     
+
+elif [[ "$choix" =~ [q/Q] ]]
+then
+    echo "aurevoir merci"
+    break
+fi   
 done
 
 
-echo "oke merci d'etre passé"
+
