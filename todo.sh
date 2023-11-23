@@ -3,7 +3,7 @@
 #!/bin/bash
 i=1
 while true ; do #boucle qui nous dmd la reponse tant qu'on 
-    echo "Bonjour,bienvenu dans votre to do list, vous pouvers ajouter(1) , supprimer(2)  ou afficher certaines tache(2) , Que voulez vous faire ? (1/2/3) "
+    echo "Bonjour,bienvenu dans votre to do list, vous pouvers ajouter(1) , supprimer(2)  ou afficher certaines tache(3) ou bien tout supprimer (5) , Que voulez vous faire ? (1/2/3/5) "
     read choix
     touch task
 
@@ -32,6 +32,10 @@ then
     echo "Voici ce que contient votre To-do-list"
     cat task
     
+elif [[ "$choix" =~ [5] ]]
+then
+    truncate -s 0 task
+
 
 elif [[ "$choix" =~ [q/Q] ]]
 then
