@@ -28,12 +28,14 @@ elif [[ "$choix " =~ [2] ]]
 then
     printf "Quel tache voulez vous supprimer ?"
     read -r nbr
-    $ grep -v "$i" mtask > tmpfile && mv tmpfile task
+     sed -i "${nbr}d" task
+    elif [[ "$choix " =~ [3] ]]
+    then
 
 
 
 
-elif [[ "$choix " =~ [3] ]] #afficher le contenu de la liste 
+elif [[ "$choix" =~ [3] ]] #afficher le contenu de la liste 
 then
     echo "Voici ce que contient votre To-do-list"
     cat task
