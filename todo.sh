@@ -26,13 +26,6 @@ if [[ "$choix " =~ [1] ]]; then #Si le choix de l'utilisateur est "1" alors on e
 
 elif [[ "$choix " =~ [2] ]] #si l'utilisateur rentre 2 , alors on va lancer le code suivant pour supprimer via le numero de la tache
 then
-<<<<<<< HEAD
-    printf "Quel tache voulez vous supprimer ?"
-    read -r nbr
-     sed -i "${nbr}d" task
-    elif [[ "$choix " =~ [3] ]]
-    then
-=======
 
  read -p "Entrez le numéro de la tâche à supprimer : " numero
     if [ "$(gsed -n "${numero}p" ./task )" ]; then
@@ -45,7 +38,6 @@ then
         echo "La tâche n'existe pas."
         echo "~~~"
     fi
->>>>>>> 437c89f3c4564682b8790be782f6a45caf95a177
 
 
 
