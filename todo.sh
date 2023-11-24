@@ -30,13 +30,17 @@ then
  read -p "Entrez le numéro de la tâche à supprimer : " numero
     if [ "$( gsed -n "${numero}p" ./task )" ]; then
         gsed -i "${numero}d" ./task #q Sed fait la recherche du nombre encodé et la supprime.
-        echo "~~~"
+        echo "~~~~~~~~~~~~~~~~~~~~~~"
         echo "Tâche supprimée avec succès !"
-        echo "~~~"
+        echo "~~~~~~~~~~~~~~~~~~~~~~"
+        echo " Vous avez supprimé $tache"
+        echo "~~~~~~~~~~~~~~~~~~~~~~"
     else
-        echo "~~~"
+        echo "~~~~~~~~~~~~~~~~~~~~~~"
         echo "La tâche n'existe pas."
-        echo "~~~"
+        echo "~~~~~~~~~~~~~~~~~~~~~~"
+        
+    
     fi
 
 
@@ -44,8 +48,11 @@ then
 
 elif [[ "$choix" =~ [3] ]] #afficher le contenu de la liste 
 then
+    echo " --------------------------------------"
     echo "Voici ce que contient votre To-do-list"
     cat task
+    echo " --------------------------------------"
+
     
 elif [[ "$choix" =~ [5] ]] # Supprimes toute le contenu du fichier 
 then
