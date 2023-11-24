@@ -28,7 +28,7 @@ elif [[ "$choix " =~ [2] ]] #si l'utilisateur rentre 2 , alors on va lancer le c
 then
 
  read -p "Entrez le numéro de la tâche à supprimer : " numero
-    if [ "$(gsed -n "${numero}p" ./task )" ]; then
+    if [ "$( gsed -n "${numero}p" ./task )" ]; then
         gsed -i "${numero}d" ./task #q Sed fait la recherche du nombre encodé et la supprime.
         echo "~~~"
         echo "Tâche supprimée avec succès !"
