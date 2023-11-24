@@ -26,7 +26,13 @@ if [[ "$choix " =~ [1] ]]; then #Si le choix de l'utilisateur est "1" alors on e
 
 elif [[ "$choix " =~ [2] ]]
 then
-    echo "Test =b"
+    printf "Quel tache voulez vous supprimer ?"
+    read -r nbr
+    $ grep -v "$i" mtask > tmpfile && mv tmpfile task
+
+
+
+
 elif [[ "$choix " =~ [3] ]] #afficher le contenu de la liste 
 then
     echo "Voici ce que contient votre To-do-list"
